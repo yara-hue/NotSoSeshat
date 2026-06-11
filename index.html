@@ -39,17 +39,17 @@
 
       /* FAQ accordion */
       .faq-question { cursor: pointer; user-select: none; }
-      .faq-question .chevron { transition: transform .2s ease; }
+      .faq-question .chevron { transition: transform .3s cubic-bezier(.4,0,.2,1); }
       .faq-question.open .chevron { transform: rotate(180deg); }
       .faq-answer {
         max-height: 0;
         opacity: 0;
         overflow: hidden;
         padding: 0 14px !important;
-        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+        transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.35s cubic-bezier(.4,0,.2,1), padding 0.35s cubic-bezier(.4,0,.2,1);
       }
       .faq-answer.open {
-        max-height: 500px;
+        max-height: 800px;
         opacity: 1;
         padding: 0 14px 10px !important;
       }
