@@ -41,7 +41,18 @@
       .faq-question { cursor: pointer; user-select: none; }
       .faq-question .chevron { transition: transform .2s ease; }
       .faq-question.open .chevron { transform: rotate(180deg); }
-      .faq-answer { overflow: hidden; }
+      .faq-answer {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 14px !important;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+      }
+      .faq-answer.open {
+        max-height: 500px;
+        opacity: 1;
+        padding: 0 14px 10px !important;
+      }
 
       /* Modal enhancements */
       .form-progress { background: #f1f5f9; border-radius: 999px; height: 4px; overflow: hidden; }
@@ -1235,7 +1246,7 @@
           '<div id="faq-section" class="seshat-faq" style="padding:32px 0 24px;">' +
             '<div class="max-w-3xl mx-auto px-4 md:px-8">' +
               '<h2 style="font-size:22px;font-weight:600;color:#1a1a1a;text-align:center;">Frequently Asked Questions</h2>' +
-              '<div class="section-divider" style="width:48px;height:2px;background:var(--gold);margin:8px auto 20px;border-radius:999px;"></div>';
+
 
         for (var fi = 0; fi < faqData.length; fi++) {
           var item = faqData[fi];
@@ -1246,7 +1257,7 @@
                 '<span style="font-size:13px;font-weight:600;color:#1a1a1a;">' + item.q + '</span>' +
                 '<span class="chevron" style="font-size:12px;color:#0f6a44;">\u25bc</span>' +
               '</button>' +
-              '<div id="faq-a' + fi + '" class="faq-answer" role="region" aria-labelledby="faq-q' + fi + '" style="display:' + (isFirst ? 'block' : 'none') + ';padding:0 14px 10px;font-size:12px;color:#475569;line-height:1.5;">' +
+              '<div id="faq-a' + fi + '" class="faq-answer' + (isFirst ? ' open' : '') + '" role="region" aria-labelledby="faq-q' + fi + '" style="font-size:12px;color:#475569;line-height:1.5;">' +
                 item.a +
               '</div>' +
             '</div>';
@@ -1295,9 +1306,9 @@
         btn.classList.toggle('open');
         var answer = document.getElementById(btn.getAttribute('aria-controls'));
         if (!answer) return;
-        var closed = answer.style.display === 'none' || !answer.style.display || answer.style.display === '';
-        btn.setAttribute('aria-expanded', closed);
-        answer.style.display = closed ? 'block' : 'none';
+        var closed = !answer.classList.contains('open');
+        btn.setAttribute('aria-expanded', !closed);
+        answer.classList.toggle('open');
       }
 
       function faqKeyNav(e, btn) {
