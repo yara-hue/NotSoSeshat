@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+  <div class="w-full max-w-2xl rounded-xl bg-white shadow-2xl overflow-hidden">
+    <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200" data-cur="cursor">
+      <div class="flex items-center gap-2">
+        <h3 class="text-base font-bold text-slate-900">General — Interactive Form</h3>
+        <button class="text-xs font-medium text-slate-500 hover:text-slate-800 transition-colors px-2 py-1">Exit</button>
+        <button class="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-700 transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="p-3" data-cur="cursor" style="height: calc(100vh - 120px); overflow-y: scroll;">
+      <div class="border border-slate-200 rounded-lg">
+        <div class="space-y-3">
+
+          <!-- Section 1 - Medical History -->
+          <div data-cur="cursor">
+            <div class="mb-2 flex items-center gap-2" data-cur="cursor">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">1</div>
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Medical History</h2>
+                <p class="text-[10px] text-slate-500">Chronic conditions &amp; risk factors</p>
+              </div>
+            </div>
+            <div class="w-fit max-w-full rounded-lg border border-dashed border-slate-300 bg-transparent p-2" data-cur="cursor">
+              <div>
+                <h3 class="mb-2 text-xs font-semibold text-slate-800">Chronic Conditions</h3>
+                <div class="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="cond-0" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox" checked=""><span class="text-xs text-slate-900">Type 2 Diabetes</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="cond-1" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox" checked=""><span class="text-xs text-slate-900">Hypertension</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="cond-2" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Hyperlipidemia</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="cond-3" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Asthma</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="cond-4" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Hypothyroidism</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="cond-5" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Obesity</span></label>
+                </div>
+                <div class="mt-2">
+                  <label class="block text-[10px] font-medium text-slate-600 mb-0.5" data-cur="cursor">Other</label>
+                  <input placeholder="Specify other condition" class="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" type="text" value="" data-cur="cursor">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 - Surgical History -->
+          <div data-cur="cursor">
+            <div class="mb-2 flex items-center gap-2" data-cur="cursor">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">2</div>
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Surgical History</h2>
+                <p class="text-[10px] text-slate-500">Procedures, year, complications</p>
+              </div>
+            </div>
+            <div class="w-fit max-w-full rounded-lg border border-dashed border-slate-300 bg-transparent p-2">
+              <div data-cur="cursor">
+                <p class="mb-2 text-xs font-semibold text-slate-700" data-cur="cursor">Previous surgeries?</p>
+                <div class="flex flex-wrap gap-2" data-cur="cursor">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="yes" checked="" name="hasSurgery"><span class="text-xs text-slate-900">Yes</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="no" name="hasSurgery"><span class="text-xs text-slate-900">No</span></label>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200">Procedure</th>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200" data-cur="cursor">Year</th>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200">Complications</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Procedure name" type="text" value=""></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Year" type="number" data-cur="cursor"></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Complications" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Procedure name" type="text" value=""></td>
+                        <td class="border border-slate-200 p-0" data-cur="cursor"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Year" type="number"></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Complications" type="text" value=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mt-2 inline-flex cursor-pointer items-center gap-1 rounded-md border border-dashed border-slate-300 bg-white px-2 py-1 text-[10px] font-semibold text-slate-500 hover:border-blue-400 hover:text-blue-600 transition-colors">+ Add another surgery</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3 - Smoking History -->
+          <div>
+            <div class="mb-2 flex items-center gap-2">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">3</div>
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Smoking History</h2>
+                <p class="text-[10px] text-slate-500">Status, type, duration &amp; level</p>
+              </div>
+            </div>
+            <div class="w-fit max-w-full rounded-lg border border-dashed border-slate-300 bg-transparent p-2">
+              <div>
+                <p class="mb-2 text-xs font-semibold text-slate-700">Smoking Status</p>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="current" name="smoking"><span class="text-xs text-slate-900">Current Smoker</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="former" name="smoking"><span class="text-xs text-slate-900">Former Smoker</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="never" checked="" name="smoking"><span class="text-xs text-slate-900">Never Smoked</span></label>
+                </div>
+                <h3 class="mt-2 mb-1 text-xs font-semibold text-slate-800">Type</h3>
+                <div class="grid gap-1 sm:grid-cols-2 lg:grid-cols-4">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="smoke-cig" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Cigarettes</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="smoke-shisha" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Shisha</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="smoke-vape" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Vaping</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="smoke-other" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Other</span></label>
+                </div>
+                <div class="mt-2">
+                  <label class="block text-[10px] font-medium text-slate-600 mb-0.5">Since</label>
+                  <input placeholder="Year started" class="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" type="text" value="">
+                </div>
+                <h3 class="mt-2 mb-1 text-xs font-semibold text-slate-800">Usage Level</h3>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="light" name="level"><span class="text-xs text-slate-900">Light</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="moderate" checked="" name="level"><span class="text-xs text-slate-900">Moderate</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="heavy" name="level"><span class="text-xs text-slate-900">Heavy</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4 - Family History -->
+          <div>
+            <div class="mb-2 flex items-center gap-2">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">4</div>
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Family History</h2>
+                <p class="text-[10px] text-slate-500">Consanguinity &amp; inherited conditions</p>
+              </div>
+            </div>
+            <div class="w-fit max-w-full rounded-lg border border-dashed border-slate-300 bg-transparent p-2">
+              <div>
+                <p class="mb-2 text-xs font-semibold text-slate-700">Parental Consanguinity</p>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="yes" name="consanguinity"><span class="text-xs text-slate-900">Yes</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="no" checked="" name="consanguinity"><span class="text-xs text-slate-900">No</span></label>
+                </div>
+                <p class="mt-2 mb-2 text-xs font-semibold text-slate-700">Family History of Medical Conditions</p>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="yes" name="familyHx"><span class="text-xs text-slate-900">Yes</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input class="h-3.5 w-3.5 border-slate-300 text-blue-600 focus:ring-blue-500" type="radio" value="no" checked="" name="familyHx"><span class="text-xs text-slate-900">No</span></label>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200">Condition</th>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200">Relative</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Condition" type="text" value=""></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Relationship" type="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Condition" type="text" value=""></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Relationship" type="text" value=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mt-2 inline-flex cursor-pointer items-center gap-1 rounded-md border border-dashed border-slate-300 bg-white px-2 py-1 text-[10px] font-semibold text-slate-500 hover:border-blue-400 hover:text-blue-600 transition-colors">+ Add another condition</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5 - Clinical Assessment -->
+          <div>
+            <div class="mb-2 flex items-center gap-2">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">5</div>
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Clinical Assessment</h2>
+                <p class="text-[10px] text-slate-500">ICD-10 diagnoses &amp; notes</p>
+              </div>
+            </div>
+            <div class="w-fit max-w-full rounded-lg border border-dashed border-slate-300 bg-transparent p-2">
+              <div>
+                <h3 class="mb-2 text-xs font-semibold text-slate-800">Diagnoses (ICD-10)</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200">Diagnosis</th>
+                        <th class="bg-slate-50 px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wide text-slate-600 border border-slate-200">ICD-10 Code</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Diagnosis" type="text" value="Type 2 Diabetes"></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="ICD-10 Code" type="text" value="E11"></td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="Diagnosis" type="text" value="Hypertension"></td>
+                        <td class="border border-slate-200 p-0"><input class="w-full border-0 bg-transparent px-1.5 py-0.5 text-xs text-slate-900 focus:outline-none" placeholder="ICD-10 Code" type="text" value="I10"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mt-2 inline-flex cursor-pointer items-center gap-1 rounded-md border border-dashed border-slate-300 bg-white px-2 py-1 text-[10px] font-semibold text-slate-500 hover:border-blue-400 hover:text-blue-600 transition-colors">+ Add diagnosis</div>
+                <h3 class="mt-3 mb-1 text-xs font-semibold text-slate-800">Clinical Notes</h3>
+                <textarea rows="3" placeholder="Enter clinical notes, observations, and assessment details..." class="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-y">Patient presents with </textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6 - Treatment Plan -->
+          <div>
+            <div class="mb-2 flex items-center gap-2">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">6</div>
+              <div>
+                <h2 class="text-sm font-bold text-slate-900">Treatment Plan</h2>
+                <p class="text-[10px] text-slate-500">Non-drug recommendations &amp; follow-up</p>
+              </div>
+            </div>
+            <div class="w-fit max-w-full rounded-lg border border-dashed border-slate-300 bg-transparent p-2">
+              <div>
+                <h3 class="mb-2 text-xs font-semibold text-slate-800">Lifestyle &amp; Non-Drug Recommendations</h3>
+                <div class="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-0" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox" checked=""><span class="text-xs text-slate-900">Rest and Recovery</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-1" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox" checked=""><span class="text-xs text-slate-900">Smoking Cessation</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-2" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Regular Exercise</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-3" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Weight Loss</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-4" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Diet Modification</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-5" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Low Sodium Diet</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-6" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Low Carbohydrate Diet</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-7" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">Low Fat Diet</span></label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="tx-8" class="h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" type="checkbox"><span class="text-xs text-slate-900">High Fibre Diet</span></label>
+                </div>
+                <div class="mt-2">
+                  <label class="block text-[10px] font-medium text-slate-600 mb-0.5">Other</label>
+                  <input placeholder="Specify other recommendation" class="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" type="text" value="">
+                </div>
+                <h3 class="mt-3 mb-1 text-xs font-semibold text-slate-800">Follow-Up Appointment</h3>
+                <div class="flex items-center gap-2">
+                  <input placeholder="Value" class="w-20 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" type="number" value="2">
+                  <select class="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <option>Days</option>
+                    <option>Weeks</option>
+                    <option>Months</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
