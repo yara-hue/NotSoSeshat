@@ -1578,7 +1578,7 @@
 
           mascot.style.pointerEvents = 'none';
           mascot.style.transition = 'transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-          mascot.style.transform = 'translateY(-60px)';
+          mascot.style.transform = '';
 
           setTimeout(function() {
             mascot.style.transition = 'none';
@@ -1589,7 +1589,7 @@
               var eased = 1 - Math.pow(1 - t, 3);
               var x = eased * 500;
               var bob = Math.sin(frame * 0.18) * 3;
-              mascot.style.transform = 'translateY(-60px) translateX(' + x + 'px) translateY(' + bob + 'px)';
+              mascot.style.transform = 'translateX(' + x + 'px) translateY(' + bob + 'px)';
               mascot.style.opacity = 1 - t;
               if (t >= 1) {
                 clearInterval(walkTimer);
