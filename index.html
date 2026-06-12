@@ -1582,13 +1582,13 @@
 
           setTimeout(function() {
             mascot.style.transition = 'none';
-            var frame = 0, totalFrames = 170;
+            var frame = 0, totalFrames = 340;
             var walkTimer = setInterval(function() {
               frame++;
               var t = Math.min(frame / totalFrames, 1);
               var eased = 1 - Math.pow(1 - t, 3);
               var x = eased * 500;
-              var bob = Math.sin(frame * 0.18) * 3;
+              var bob = Math.sin(frame * 0.09) * 3;
               mascot.style.transform = 'translateX(' + x + 'px) translateY(' + bob + 'px)';
               mascot.style.opacity = 1 - t;
               if (t >= 1) {
