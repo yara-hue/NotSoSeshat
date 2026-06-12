@@ -141,6 +141,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="assets/jquery.confetti.js?v=2"></script>
     <script>
+      if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+      window.scrollTo(0, 0);
       var actx;
       var bufPop, bufDing, bufBoo;
       var audioReady = false;
@@ -1263,10 +1265,10 @@
           faqHTML +=
             '<div class="faq-item" style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:6px;">' +
               '<button class="faq-question' + (isFirst ? ' open' : '') + '" id="faq-q' + fi + '" onclick="toggleFAQ(this)" onkeydown="faqKeyNav(event,this)" aria-expanded="' + isFirst + '" aria-controls="faq-a' + fi + '" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 14px;cursor:pointer;background:none;border:none;text-align:left;font-family:inherit;">' +
-                '<span style="font-size:13px;font-weight:600;color:#1a1a1a;">' + item.q + '</span>' +
-                '<span class="chevron" style="font-size:12px;color:#0f6a44;">\u25bc</span>' +
+                '<span style="font-size:15px;font-weight:600;color:#1a1a1a;">' + item.q + '</span>' +
+                '<span class="chevron" style="font-size:13px;color:#0f6a44;">\u25bc</span>' +
               '</button>' +
-              '<div id="faq-a' + fi + '" class="faq-answer' + (isFirst ? ' open' : '') + '" role="region" aria-labelledby="faq-q' + fi + '" style="font-size:12px;color:#475569;line-height:1.5;">' +
+              '<div id="faq-a' + fi + '" class="faq-answer' + (isFirst ? ' open' : '') + '" role="region" aria-labelledby="faq-q' + fi + '" style="font-size:14px;color:#475569;line-height:1.6;">' +
                 item.a +
               '</div>' +
             '</div>';
